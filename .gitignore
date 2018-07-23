@@ -1,0 +1,21 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Composer template
+composer.phar
+/vendor/
+# IntelliJ project files
+.idea
+
+/Test Results - PHPUnit.html
+
+.DS_STORE
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*

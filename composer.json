@@ -1,0 +1,29 @@
+{
+  "name": "specter/container",
+  "type": "library",
+  "description": "A very simple container implementation",
+  "license": "MIT",
+  "version": "1.0.0",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "James Parker",
+      "email": "jamseyp@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Specter\\Container\\": "src"
+    },
+    "exclude-from-classmap": [
+      "tests/"
+    ]
+  },
+  "require": {
+    "php": ">=7.0",
+    "psr/container": "1.0.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "6.5.*"
+  }
+}

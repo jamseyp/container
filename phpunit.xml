@@ -1,0 +1,13 @@
+<phpunit haltonfailure="true" haltonerror="true" bootstrap="tests/bootstrap.php">
+    <formatter type="clover" usefile="true"/>
+    <testsuite name="Specter/Container">
+        <directory>./tests</directory>
+    </testsuite>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="false">
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+
+</phpunit>
