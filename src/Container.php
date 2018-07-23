@@ -50,7 +50,9 @@ class Container implements ContainerInterface
     public function get($id)
     {
         if (!$this->has($id)) {
+            //@codeCoverageIgnoreStart
             throw new ServiceNotFoundException($id);
+            //@codeCoverageIgnoreEnd
         }
 
         return $this->resources[$id];
@@ -68,9 +70,12 @@ class Container implements ContainerInterface
      */
     public function set($id, $service)
     {
-        if (!$this->has($id)) {
-            $this->resources[$id] = $service;
+        if ($this->has($id)) {
+            //@codeCoverageIgnoreStart
+            throw new DuplicateServiceException($id);
+            //@codeCoverageIgnoreEnd
         }
-        throw new DuplicateServiceException($id);
+        $this->resources[$id] = $service;
+
     }
 }
