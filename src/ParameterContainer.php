@@ -9,33 +9,33 @@
 namespace Specter\Container;
 
 use InvalidArgumentException;
-use Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use Symfony\Component\HttpFoundation\ParameterBag;
 
 /**
  * Class ParameterContainer
+ *
  * @package Specter\Container
  * @author James Parker <jamseyp@gmail.com>
  */
 class ParameterContainer extends Container
 {
-    /** @var ParameterBagInterface */
+    /** @var ParameterBag */
     private $parameterBag;
 
     /**
      * ParameterContainer constructor.
      *
-     * @param ParameterBagInterface|null $parameterBag
+     * @param ParameterBag|null $parameterBag
      */
-    public function __construct(ParameterBagInterface $parameterBag = null)
+    public function __construct(ParameterBag $parameterBag = null)
     {
-        $this->parameterBag = $parameterBag ?: new EnvPlaceholderParameterBag();
+        $this->parameterBag = $parameterBag ?: new ParameterBag();
     }
 
     /**
      * Gets the service container parameter bag.
      *
-     * @return ParameterBagInterface A ParameterBagInterface instance
+     * @return ParameterBag A ParameterBagInterface instance
      */
     public function getParameterBag()
     {
